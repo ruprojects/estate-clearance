@@ -114,14 +114,23 @@ footer {
   color: var(--main-color);
 }
 @media (max-width: 600px) {
-  header { flex-direction: column; }
-  header h1 {
-    font-size: 1.2em;  /* ← 小さくして1行に */
-    margin-top: 5px;   /* ← 少し上余白を減らす */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 左寄せ開始 */
+    padding: 10px;
   }
   header a img {
-    max-width: 70px;   /* ← ロゴも小さく */
+    max-width: 60px;  /* ロゴを小さく */
     height: auto;
+    flex-shrink: 0;   /* ロゴは縮まない */
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.1em;        /* スマホ用の小さめサイズ */
+    margin-left: 10px;       /* ロゴとの間に隙間 */
+    text-align: center;      /* テキストを中央寄せ */
+    flex: 1;                 /* 残りの幅を全部使う */
   }
   nav {
     gap: 12px;
