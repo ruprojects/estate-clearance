@@ -39,6 +39,14 @@ header h1 {
   flex: 1;
   text-align: center;
 }
+header a {
+  text-decoration: none;
+  display: inline-block;
+}
+header a:hover {
+  text-decoration: none;
+  color: inherit;
+}
 header a img {
   max-width: 100px;
   height: auto;
@@ -139,12 +147,13 @@ footer {
 }
 </style>
 </head>
-<body>
+<body id="top">
 <header>
   <a href="#"><img src="logo.png" alt="遺品整理サービス Windbell ロゴ"></a>
   <h1>遺品整理サービス Windbell</h1>
 </header>
 <nav>
+  <a href="#top">トップ</a>
   <a href="#service">サービス</a>
   <a href="#price">料金</a>
   <a href="#about">会社情報</a>
