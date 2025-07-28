@@ -25,11 +25,11 @@ body {
   background-color: #fff;
 }
 header {
-  position: relative; /* 子要素の絶対位置指定の基準にする */
+  position: relative;
   padding: 20px;
   background: var(--bg-alpha-90);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  height: 80px; /* 高さを固定（調整可） */
+  height: 80px;
 }
 header a {
   position: absolute;
@@ -39,6 +39,11 @@ header a {
   text-decoration: none;
   display: inline-block;
 }
+header a img {
+  max-width: 100px;
+  height: auto;
+  cursor: pointer;
+}
 header h1 {
   position: absolute;
   top: 50%;
@@ -47,15 +52,6 @@ header h1 {
   margin: 0;
   font-size: 2em;
   color: var(--main-color);
-}
-header a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-header a img {
-  max-width: 100px;
-  height: auto;
-  cursor: pointer;
 }
 nav {
   position: sticky;
@@ -83,8 +79,8 @@ main {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-section { 
-  margin-bottom: 90px; /* ここを拡大 */
+section {
+  margin-bottom: 90px;
 }
 h2 {
   border-bottom: 2px solid var(--accent-color);
@@ -92,10 +88,14 @@ h2 {
   color: var(--main-color);
   margin-top: 0;
 }
+.table-wrapper {
+  overflow-x: auto;
+}
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
+  min-width: 500px; /* スクロール用 */
 }
 th, td {
   border: 1px solid #ccc;
@@ -113,24 +113,25 @@ footer {
   font-size: 0.9em;
   color: var(--main-color);
 }
+/* スマホ向け調整 */
 @media (max-width: 600px) {
   header {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* 左寄せ開始 */
+    justify-content: flex-start;
     padding: 10px;
   }
   header a img {
-    max-width: 60px;  /* ロゴを小さく */
+    max-width: 60px;
     height: auto;
-    flex-shrink: 0;   /* ロゴは縮まない */
+    flex-shrink: 0;
   }
   header h1 {
     margin: 0;
-    font-size: 1.1em;        /* スマホ用の小さめサイズ */
-    margin-left: 10px;       /* ロゴとの間に隙間 */
-    text-align: center;      /* テキストを中央寄せ */
-    flex: 1;                 /* 残りの幅を全部使う */
+    font-size: 1.1em;
+    margin-left: 10px;
+    text-align: center;
+    flex: 1;
   }
   nav {
     gap: 12px;
@@ -139,34 +140,6 @@ footer {
     -webkit-overflow-scrolling: touch;
   }
   nav a { font-size: 0.9em; padding: 4px 8px; flex-shrink: 0; }
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  tr {
-    margin-bottom: 15px;
-  }
-  td {
-    border: none;
-    position: relative;
-    padding-left: 50%;
-  }
-  td::before {
-    position: absolute;
-    top: 12px;
-    left: 15px;
-    width: 45%;
-    white-space: nowrap;
-    font-weight: bold;
-    color: var(--main-color);
-  }
-  td:nth-of-type(1)::before { content: "トラックプラン"; }
-  td:nth-of-type(2)::before { content: "料金"; }
-  td:nth-of-type(3)::before { content: "内容"; }
 }
 </style>
 </head>
@@ -185,57 +158,50 @@ footer {
 </nav>
 <main>
   <section id="service">
-    <section>
-        <h2>提供サービス一覧</h2>
-  
-        <h3>遺品整理</h3>
-        <p>ご遺族のお気持ちに寄り添いながら、故人の思い出を丁寧に整理いたします。法令遵守を徹底し、必要に応じて供養のご相談も承ります。</p>
-  
-        <h3>生前整理</h3>
-        <p>ご自身やご家族のために、今のうちから身の回りの物を整理するお手伝いをします。将来の負担軽減や心の整理にもつながります。</p>
-  
-        <h3>終活サポート</h3>
-        <p>安心して人生を締めくくる準備として、書類の整理、物の片付け、想いの伝達まで総合的にサポートします。</p>
-  
-        <h3>不用品回収</h3>
-        <p>ご家庭や事業所の不用品（家具・家電・雑貨など）を丁寧・迅速に回収。リサイクル・処分まで一括対応いたします。</p>
-  
-        <h3>後片付け</h3>
-        <p>整理後の清掃、簡易修繕、原状回復なども対応可能。大家様・管理会社様との連携もスムーズに行います。</p>
-    </section>
+    <h2>提供サービス一覧</h2>
+    <h3>遺品整理</h3>
+    <p>ご遺族のお気持ちに寄り添いながら、故人の思い出を丁寧に整理いたします。法令遵守を徹底し、必要に応じて供養のご相談も承ります。</p>
+    <h3>生前整理</h3>
+    <p>ご自身やご家族のために、今のうちから身の回りの物を整理するお手伝いをします。将来の負担軽減や心の整理にもつながります。</p>
+    <h3>終活サポート</h3>
+    <p>安心して人生を締めくくる準備として、書類の整理、物の片付け、想いの伝達まで総合的にサポートします。</p>
+    <h3>不用品回収</h3>
+    <p>ご家庭や事業所の不用品（家具・家電・雑貨など）を丁寧・迅速に回収。リサイクル・処分まで一括対応いたします。</p>
+    <h3>後片付け</h3>
+    <p>整理後の清掃、簡易修繕、原状回復なども対応可能。大家様・管理会社様との連携もスムーズに行います。</p>
   </section>
 
   <section id="price">
     <h2>基本料金の目安</h2>
     <p>下記は一般的な目安です。間取りや荷物の量、現場の状況により異なりますので、正式なお見積もりは無料で対応しております。</p>
-  
-    <table>
+    <div class="table-wrapper">
+      <table>
         <thead>
-            <tr>
-                <th>プラン</th>
-                <th>目安</th>
-                <th>料金（税込）</th>
-            </tr>
+          <tr>
+            <th>プラン</th>
+            <th>目安</th>
+            <th>料金（税込）</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>軽トラックプラン</td>
-                <td>1K〜1DK程度の荷物量</td>
-                <td>30,000円〜</td>
-            </tr>
-            <tr>
-                <td>1トントラックプラン</td>
-                <td>1LDK〜2DK程度</td>
-                <td>50,000円〜</td>
-            </tr>
-            <tr>
-                <td>2トントラックプラン</td>
-                <td>2LDK〜3DK以上</td>
-                <td>80,000円〜</td>
-            </tr>
+          <tr>
+            <td>軽トラックプラン</td>
+            <td>1K〜1DK程度の荷物量</td>
+            <td>30,000円〜</td>
+          </tr>
+          <tr>
+            <td>1トントラックプラン</td>
+            <td>1LDK〜2DK程度</td>
+            <td>50,000円〜</td>
+          </tr>
+          <tr>
+            <td>2トントラックプラン</td>
+            <td>2LDK〜3DK以上</td>
+            <td>80,000円〜</td>
+          </tr>
         </tbody>
-    </table>
-  
+      </table>
+    </div>
     <p style="margin-top: 20px;">※料金には人件費・車両費・簡易清掃費などが含まれます。特殊作業や貴重品供養などは別途ご相談ください。</p>
   </section>
 
@@ -247,25 +213,25 @@ footer {
   <section id="partner">
     <h2>業務提携のメリット</h2>
     <ul>
-        <li><strong>顧客満足度の向上：</strong>専門性の高いサービスを連携することで、利用者の満足度が大きく向上します。</li>
-        <li><strong>本業の効率化：</strong>遺品整理や片付けのご依頼をスムーズに外部連携でき、本業に集中できます。</li>
-        <li><strong>ワンストップ対応：</strong>お客様への提案力が増し、信頼関係の構築にも繋がります。</li>
-        <li><strong>地域貢献・社会的信頼性の向上：</strong>適切な処理と心ある対応を通じて、社会的評価も高まります。</li>
+      <li><strong>顧客満足度の向上：</strong>専門性の高いサービスを連携することで、利用者の満足度が大きく向上します。</li>
+      <li><strong>本業の効率化：</strong>遺品整理や片付けのご依頼をスムーズに外部連携でき、本業に集中できます。</li>
+      <li><strong>ワンストップ対応：</strong>お客様への提案力が増し、信頼関係の構築にも繋がります。</li>
+      <li><strong>地域貢献・社会的信頼性の向上：</strong>適切な処理と心ある対応を通じて、社会的評価も高まります。</li>
     </ul>
   </section>
-  
+
   <section>
     <h2>提携を希望する業種</h2>
     <ul>
-        <li>不動産業（売却前の整理、残置物撤去）</li>
-        <li>葬儀業（遺族対応の一環として）</li>
-        <li>マンション・アパート管理業</li>
-        <li>病院・介護施設（退去時対応など）</li>
-        <li>弁護士・司法書士・行政書士（相続や後見対応）</li>
-        <li>引越し業（荷物整理・回収）</li>
-        <li>解体工事業（空き家解体前の処分）</li>
-        <li>地域包括支援センター・自治体</li>
-        <li>福祉関連事業（高齢者支援・成年後見）</li>
+      <li>不動産業（売却前の整理、残置物撤去）</li>
+      <li>葬儀業（遺族対応の一環として）</li>
+      <li>マンション・アパート管理業</li>
+      <li>病院・介護施設（退去時対応など）</li>
+      <li>弁護士・司法書士・行政書士（相続や後見対応）</li>
+      <li>引越し業（荷物整理・回収）</li>
+      <li>解体工事業（空き家解体前の処分）</li>
+      <li>地域包括支援センター・自治体</li>
+      <li>福祉関連事業（高齢者支援・成年後見）</li>
     </ul>
     <p>上記以外にも、地域や目的に応じた柔軟な連携が可能です。ご興味のある方はぜひお気軽にお問い合わせください。</p>
   </section>
@@ -274,14 +240,10 @@ footer {
     <h2>お気軽にご相談ください</h2>
     <p>ご不明な点やご相談など、どんなことでもお気軽にお問い合わせください。<br>
     LINE公式アカウントから簡単にご連絡いただけます。</p>
-  
     <div class="line-button">
-        <!-- ↓ https://lin.ee/XXXXXXXXを独自のURLに変更 -->
-        <a href="https://lin.ee/540efwmg" target="_blank">
-            <!-- ↓ LINE公式が提供するボタン画像（自由に変更可能） -->
-            <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINEで友だち追加">
-        </a>
-        <!-- ↑ LINE友だち追加URL：必ずあなたのリンクに差し替えてください -->
+      <a href="https://lin.ee/XXXXXXXX" target="_blank">
+        <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINEで友だち追加">
+      </a>
     </div>
   </section>
 </main>
