@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>繋ぐ遺品整理サービス｜安心・丁寧な遺品整理・生前整理・不用品回収</title>
-<meta name="description" content="繋ぐ遺品整理サービスは、心を込めた遺品整理、生前整理、不用品回収を専門に行っています。明確な料金設定と豊富な実績で、安心してお任せいただけます。無料見積もりも受付中。">
-<meta name="keywords" content="遺品整理, 生前整理, 不用品回収, 終活, 業務提携, 東京都, 神奈川県, 千葉県, 埼玉県">
+<title>繋ぐ遺品整理サービス｜遺品整理・料金・会社情報・業務提携・お問い合わせ</title>
+<meta name="description" content="繋ぐ遺品整理サービスは、心を込めた遺品整理、明確な料金設定、信頼の会社情報、不動産・介護・行政との業務提携、お問い合わせ受付を1ページでご案内しています。">
+<meta name="keywords" content="遺品整理,料金,会社情報,業務提携,お問い合わせ,不用品回収,生前整理,終活">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -77,6 +77,20 @@ h2 {
   color: var(--main-color);
   margin-top: 0;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px 15px;
+  text-align: left;
+}
+th {
+  background-color: var(--bg-alpha-90);
+  color: var(--main-color);
+}
 footer {
   text-align: center;
   padding: 20px;
@@ -94,6 +108,34 @@ footer {
     -webkit-overflow-scrolling: touch;
   }
   nav a { font-size: 0.9em; padding: 4px 8px; flex-shrink: 0; }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    margin-bottom: 15px;
+  }
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  td::before {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  td:nth-of-type(1)::before { content: "トラックプラン"; }
+  td:nth-of-type(2)::before { content: "料金"; }
+  td:nth-of-type(3)::before { content: "内容"; }
 }
 </style>
 </head>
@@ -111,28 +153,54 @@ footer {
 </nav>
 <main>
   <section id="service">
-    <h2>心を込めた遺品整理サービス</h2>
-    <p>繋ぐ遺品整理サービスは、<strong>ご遺族様の想いを大切にした遺品整理</strong>を提供します。迅速・丁寧な対応で、遺品の仕分け・処分・清掃などトータルでサポート。生前整理や終活サポートも承っております。</p>
+    <h2>遺品整理サービスについて</h2>
+    <p>私たちは心を込めて遺品整理をお手伝いします。専門スタッフによる迅速・丁寧な対応で、安心してお任せいただけます。</p>
   </section>
 
   <section id="price">
-    <h2>明確で安心の料金プラン</h2>
-    <p>お部屋の広さや状況に応じて最適なプランをご提案。<strong>追加料金なし・無料見積もり</strong>で安心してご利用いただけます。軽トラック・1トントラック・2トントラックなど用途に合わせた料金設定もご用意。</p>
+    <h2>料金プラン</h2>
+    <p>お部屋の広さや状況に応じた明確な料金設定で、追加料金なし。まずは無料見積もりをご依頼ください。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>トラックプラン</th>
+          <th>料金</th>
+          <th>内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>軽トラックプラン</td>
+          <td>￥30,000～</td>
+          <td>1K～1DK程度の小規模整理。少量の不用品回収含む。</td>
+        </tr>
+        <tr>
+          <td>1トントラックプラン</td>
+          <td>￥50,000～</td>
+          <td>1LDK～2DK程度の中規模整理。家具や家電の処分対応。</td>
+        </tr>
+        <tr>
+          <td>2トントラックプラン</td>
+          <td>￥80,000～</td>
+          <td>2LDK以上の大規模整理。搬出作業も安心サポート。</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <section id="about">
-    <h2>会社情報｜地域密着で信頼と実績</h2>
-    <p>私たちは東京都・神奈川県・千葉県・埼玉県を中心に、地域の皆様に支えられて遺品整理サービスを提供してきました。<strong>経験豊富な専門スタッフ</strong>が対応し、誠実で丁寧な作業をお約束します。</p>
+    <h2>会社情報</h2>
+    <p>私たちは地域に根差し、誠実な対応を心がけてきました。信頼と実績のある遺品整理のプロフェッショナルです。</p>
   </section>
 
   <section id="partner">
-    <h2>業務提携｜不動産・介護施設・行政の皆様へ</h2>
-    <p>繋ぐ遺品整理サービスでは、<strong>不動産会社様・介護施設様・行政機関様</strong>との連携を通じて、ご遺族様の負担軽減を目指しています。柔軟な提携プランもご提案可能ですので、ぜひ一度ご相談ください。</p>
+    <h2>業務提携について</h2>
+    <p>当社では、不動産会社様・介護施設様・行政機関様との連携を強化しております。ご興味がある法人様はお気軽にご連絡ください。</p>
   </section>
 
   <section id="contact">
-    <h2>お問い合わせ｜無料見積もり・ご相談受付中</h2>
-    <p>遺品整理・生前整理・不用品回収などに関するお問い合わせは、お電話またはメールフォームよりお気軽にご連絡ください。<strong>無料相談・無料見積もり</strong>を承っております。</p>
+    <h2>お問い合わせ</h2>
+    <p>ご不明点やご相談がありましたら、いつでもお問い合わせください。専門スタッフが丁寧に対応いたします。</p>
   </section>
 </main>
 <footer>
