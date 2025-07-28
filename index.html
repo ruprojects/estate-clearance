@@ -2,6 +2,24 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
+  
+<!-- セキュリティ・保護用の追加タグ -->
+<!-- 他サイトで iframe に表示されるのを防ぐ -->
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<!-- XSS対策など。CSP: 外部リソースの読み込みを制限 -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self'; 
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src https://fonts.gstatic.com;
+  img-src 'self' https: data:;
+  connect-src 'self';
+  frame-ancestors 'self';
+">
+<!-- IEでの脆弱性を減らす -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<!-- Google Chromeなどがページをクロスサイトで送信しないように -->
+<meta name="referrer" content="no-referrer-when-downgrade">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>遺品整理サービス Windbell｜遺品整理・料金・会社情報・業務提携・お問い合わせ</title>
 <meta name="description" content="遺品整理サービス Windbellは、心を込めた遺品整理、明確な料金設定、信頼の会社情報、不動産・介護・行政との業務提携、お問い合わせ受付を1ページでご案内しています。">
