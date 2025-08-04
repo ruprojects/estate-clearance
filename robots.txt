@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ruprojects.github.io/estate-clearance/sitemap.xml
