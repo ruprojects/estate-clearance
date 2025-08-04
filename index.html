@@ -14,8 +14,7 @@
 <meta property="og:image" content="https://ruprojects.github.io/estate-clearance/logo.png">
 <link rel="icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<!-- セキュリティ系 -->
+<!-- セキュリティ設定 -->
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="no-referrer-when-downgrade">
@@ -28,7 +27,6 @@
   connect-src 'self';
   frame-ancestors 'self';
 ">
-
 <style>
 :root {
   --main-color: #4b3832;
@@ -58,10 +56,12 @@ header a {
   left: 20px;
   transform: translateY(-50%);
   text-decoration: none;
+  display: inline-block;
 }
 header a img {
   max-width: 100px;
   height: auto;
+  cursor: pointer;
 }
 header h1 {
   position: absolute;
@@ -105,7 +105,6 @@ h2 {
   color: var(--main-color);
   margin-top: 0;
 }
-h3 { margin-top: 20px; color: var(--main-color); }
 .table-wrapper { overflow-x: auto; }
 table {
   width: 100%;
@@ -118,7 +117,10 @@ th, td {
   padding: 12px 15px;
   text-align: left;
 }
-th { background-color: var(--bg-alpha-90); color: var(--main-color); }
+th {
+  background-color: var(--bg-alpha-90);
+  color: var(--main-color);
+}
 footer {
   text-align: center;
   padding: 20px;
@@ -130,10 +132,15 @@ footer {
   header {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     padding: 10px;
   }
-  header a img { max-width: 60px; }
+  header a img {
+    max-width: 60px;
+    flex-shrink: 0;
+  }
   header h1 {
+    margin: 0;
     font-size: 1.1em;
     margin-left: 10px;
     flex: 1;
@@ -163,66 +170,79 @@ footer {
   <a href="#contact">お問い合わせ</a>
 </nav>
 <main>
+  <!-- 以下、元の文章そのまま -->
   <section id="service">
     <h2>提供サービス一覧</h2>
     <h3>遺品整理</h3>
-    <p>ご遺族のお気持ちに寄り添いながら、故人の思い出を丁寧に整理いたします。</p>
+    <p>ご遺族のお気持ちに寄り添いながら、故人の思い出を丁寧に整理いたします。法令遵守を徹底し、必要に応じて供養のご相談も承ります。</p>
     <h3>生前整理</h3>
-    <p>将来の負担軽減や心の整理のための身の回り整理をサポートします。</p>
+    <p>ご自身やご家族のために、今のうちから身の回りの物を整理するお手伝いをします。将来の負担軽減や心の整理にもつながります。</p>
     <h3>終活サポート</h3>
-    <p>書類整理・想いの伝達など、安心して人生を締めくくる準備を支援。</p>
+    <p>安心して人生を締めくくる準備として、書類の整理、物の片付け、想いの伝達まで総合的にサポートします。</p>
     <h3>不用品回収</h3>
-    <p>家具・家電・雑貨などを回収し、リサイクルや処分まで対応します。</p>
+    <p>ご家庭や事業所の不用品（家具・家電・雑貨など）を丁寧・迅速に回収。リサイクル・処分まで一括対応いたします。</p>
     <h3>後片付け</h3>
-    <p>整理後の清掃や簡易修繕、原状回復も行います。</p>
+    <p>整理後の清掃、簡易修繕、原状回復なども対応可能。大家様・管理会社様との連携もスムーズに行います。</p>
   </section>
-
+  
   <section id="price">
     <h2>基本料金の目安</h2>
+    <p>下記は一般的な目安です。間取りや荷物の量、現場の状況により異なりますので、正式なお見積もりは無料で対応しております。</p>
     <div class="table-wrapper">
       <table>
         <thead>
           <tr><th>プラン</th><th>目安</th><th>料金（税込）</th></tr>
         </thead>
         <tbody>
-          <tr><td>軽トラックプラン</td><td>1K〜1DK程度</td><td>30,000円〜</td></tr>
+          <tr><td>軽トラックプラン</td><td>1K〜1DK程度の荷物量</td><td>30,000円〜</td></tr>
           <tr><td>1トントラックプラン</td><td>1LDK〜2DK程度</td><td>50,000円〜</td></tr>
           <tr><td>2トントラックプラン</td><td>2LDK〜3DK以上</td><td>80,000円〜</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="margin-top: 20px;">※人件費・車両費・簡易清掃費含む。特殊作業や供養は別途。</p>
+    <p style="margin-top: 20px;">※料金には人件費・車両費・簡易清掃費などが含まれます。特殊作業や貴重品供養などは別途ご相談ください。</p>
   </section>
 
   <section id="about">
     <h2>会社情報</h2>
-    <p>地域に根差し、誠実で丁寧な対応を大切にする遺品整理サービスです。</p>
+    <p>私たちは地域に根差し、誠実な対応を心がけてきました。信頼と実績のある遺品整理のプロフェッショナルです。</p>
   </section>
 
   <section id="partner">
     <h2>業務提携のメリット</h2>
     <ul>
-      <li><strong>顧客満足度向上：</strong>高品質サービス提供で満足度UP。</li>
-      <li><strong>本業効率化：</strong>整理業務を外部委託し本業に集中。</li>
-      <li><strong>ワンストップ対応：</strong>提案力強化・信頼構築。</li>
-      <li><strong>社会的信頼性向上：</strong>適切対応で社会貢献。</li>
+      <li><strong>顧客満足度の向上：</strong>専門性の高いサービスを連携することで、利用者の満足度が大きく向上します。</li>
+      <li><strong>本業の効率化：</strong>遺品整理や片付けのご依頼をスムーズに外部連携でき、本業に集中できます。</li>
+      <li><strong>ワンストップ対応：</strong>お客様への提案力が増し、信頼関係の構築にも繋がります。</li>
+      <li><strong>地域貢献・社会的信頼性の向上：</strong>適切な処理と心ある対応を通じて、社会的評価も高まります。</li>
     </ul>
   </section>
 
-  <section id="industries">
+  <section>
     <h2>提携を希望する業種</h2>
     <ul>
-      <li>不動産業</li><li>葬儀業</li><li>管理業</li><li>病院・介護施設</li>
-      <li>弁護士・司法書士等</li><li>引越し業</li><li>解体工事業</li>
-      <li>自治体・地域包括支援</li>
+      <li>不動産業（売却前の整理、残置物撤去）</li>
+      <li>葬儀業（遺族対応の一環として）</li>
+      <li>マンション・アパート管理業</li>
+      <li>病院・介護施設（退去時対応など）</li>
+      <li>弁護士・司法書士・行政書士（相続や後見対応）</li>
+      <li>引越し業（荷物整理・回収）</li>
+      <li>解体工事業（空き家解体前の処分）</li>
+      <li>地域包括支援センター・自治体</li>
+      <li>福祉関連事業（高齢者支援・成年後見）</li>
     </ul>
+    <p>上記以外にも、地域や目的に応じた柔軟な連携が可能です。ご興味のある方はぜひお気軽にお問い合わせください。</p>
   </section>
 
   <section id="contact">
     <h2>お気軽にご相談ください</h2>
-    <p>LINEから簡単に連絡可。</p>
-    <a href="https://lin.ee/XXXXXXXX" target="_blank"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINEで友だち追加"></a>
-    <p><strong>電話：</strong><a href="tel:08012994503">080-1299-4503</a></p>
+    <p>ご不明な点やご相談など、どんなことでもお気軽にお問い合わせください。<br>
+    LINE公式アカウントから簡単にご連絡いただけます。</p>
+    <a href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener noreferrer">
+      <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINEで友だち追加">
+    </a>
+    <p><strong>電話でのお問い合わせ：</strong><br>
+    <a href="tel:08012994503" style="color: var(--main-color); text-decoration: none;">080-1299-4503</a></p>
   </section>
 </main>
 <footer>
